@@ -1,0 +1,3 @@
+include ':appbase'
+include ':app'
+rootProject.name = "Tmdb"

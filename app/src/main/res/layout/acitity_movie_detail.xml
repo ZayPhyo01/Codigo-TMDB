@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vo"
+            type="com.codigo.tmdb.vos.MovieVO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbMovieDetail"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@{vo.title}"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textStyle="bold"
+                    tools:text="Luca" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/ic_favourite_dimen"
+                    android:layout_height="@dimen/ic_favourite_dimen"
+                    android:layout_marginRight="@dimen/margin_medium_2"
+                    android:src="@drawable/ic_unfavourite"
+                    android:id="@+id/ivFavourite"
+                    android:layout_gravity="right"
+                    android:layout_alignParentRight="true"
+
+                    />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMovieDetail"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/margin_medium_2"
+            android:layout_height="200dp"
+            app:shapeAppearance="?attr/shapeImage"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbMovieDetail" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:paddingLeft="@dimen/margin_medium_2"
+            android:paddingRight="@dimen/margin_medium_2"
+            android:text="@{vo.overview}"
+            android:textColor="@color/black"
+            android:textAppearance="?attr/textAppearanceCaption"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMovieDetail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
